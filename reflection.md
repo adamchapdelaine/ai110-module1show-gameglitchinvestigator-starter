@@ -8,15 +8,17 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
 
+The first time I ran the game, the core game loop appeared mostly functional. However, there were two major bugs I noticed very quickly. Firstly, the hints were backwards and prompted me to go HIGHER when I was too high, and LOWER when I was too low. This made the hint feature unhelpful. Secondly, once the game ended, I couldn't get the new game button to work properly without refreshing the page. The new game button appeared to update the guess counter in the dev panel but I couldn't actually make guesses nor receive hints for that new game session.
+
 **Bug Reproduction Log**
 
 Document at least 3 bugs you found. Add rows as needed.
 
-| Input | Expected Behavior | Actual Behavior | Console Output / Error |
-|-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+| Input                    | Expected Behavior      | Actual Behavior             | Console Output / Error | Suspected Code Location |
+|--------------------------|------------------------|-----------------------------|------------------------|-------------------------|
+| guess of 60              | Hint: go lower         | Hint: go higher             | "None"                 | app.py, check_guess():  |
+| press new game           | new game guessing      | non-responsive guess button | "None"                 | app.py, lines 147-188   | 
+| submit second-last guess | allowed one more guess | told game is over           | "None"                 | app.py, lines 181-188   |
 
 ---
 

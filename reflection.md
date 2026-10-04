@@ -74,6 +74,8 @@ Yes. For the most part, I had Claude design generate the test cases. I'm not ver
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
 
+Streamlit's session state acts as it's long term memory, which ensures changes aren't wiped out when Streamlit triggers a rerun. A rerun just updates what you see on the screen by executing your python script again from scratch, which makes it easier to visualize any changes you made in the code.
+
 ---
 
 ## 5. Looking ahead: your developer habits
@@ -84,6 +86,9 @@ Yes. For the most part, I had Claude design generate the test cases. I'm not ver
   I want to reuse the habit of having AI explain the underlying logic behind a bug before I move to resolve it. I think it makes me a better programmer if I slow down and try to understand what's going on when something
 
 - What is one thing you would do differently next time you work with AI on a coding task?
+
+  Next time I will try to document and commit each major change I make rather than make all of the changes and then do the documentation afterwards. I did trip up a little bit following the instructions, I followed the steps chronologically and didn't realize that each of the four steps were meant to be repeated for every bug, rather than done once sequentially. 
+
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
 
 This project changed the way I think about AI generated code by making me more aware of how important human oversight and "scaffolding" is in order to get AI to generate good code. It's like the AI gets more intelligent when provided more comprehensive prompts, so the quality of AI output depends (at least in part) on the technical proficiency of the person using it. 

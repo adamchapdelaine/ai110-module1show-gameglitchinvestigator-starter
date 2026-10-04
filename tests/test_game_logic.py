@@ -7,6 +7,7 @@ def test_winning_guess():
     outcome, message = check_guess(50, 50)
     assert outcome == "Win"
 
+#TEST: Updated test case for too high guess using agent mode
 def test_guess_too_high():
     # If secret is 50 and guess is 60, outcome should be "Too High" and the
     # hint should tell the player to go LOWER (regression test for the
@@ -15,6 +16,7 @@ def test_guess_too_high():
     assert outcome == "Too High"
     assert "LOWER" in message
 
+#TEST: Updated test case for too low guess using agent mode
 def test_guess_too_low():
     # If secret is 50 and guess is 40, outcome should be "Too Low" and the
     # hint should tell the player to go HIGHER (regression test for the
@@ -23,6 +25,7 @@ def test_guess_too_low():
     assert outcome == "Too Low"
     assert "HIGHER" in message
 
+#TEST: Added test case for new game button using agent mode
 def test_new_game_lets_you_guess_again():
     # Regression test: after finishing a game, clicking "New Game" must
     # reset status back to "playing" so the player can submit new guesses
@@ -47,6 +50,7 @@ def test_new_game_lets_you_guess_again():
     assert not at.exception
     assert at.session_state.attempts == 1
 
+#TEST: Added test case for mismatched guess attempts using agent mode
 def test_invalid_guess_does_not_use_an_attempt():
     # Regression test: attempts should only increment for a validly parsed
     # guess, not just for clicking Submit. An invalid guess (e.g. blank or

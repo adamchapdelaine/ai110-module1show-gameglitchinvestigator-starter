@@ -45,8 +45,10 @@ if "history" not in st.session_state:
 
 st.subheader("Make a guess")
 
+#FIX: Fixed logic bug by adding placeholder at top of code using agent mode
 attempts_banner = st.empty()
 
+#FIX: Fixed debug panel bug by adding placeholder at top of code using agent mode
 debug_panel = st.empty()
 
 raw_guess = st.text_input(
@@ -65,6 +67,7 @@ with col3:
 if new_game:
     st.session_state.attempts = 0
     st.session_state.secret = random.randint(1, 100)
+    #FIX: Fixed game state logic bug in app.py using agent mode
     st.session_state.status = "playing"
     st.session_state.history = []
     st.success("New game started.")
@@ -116,11 +119,13 @@ if submit:
                     f"Score: {st.session_state.score}"
                 )
 
+#FIX: Fix logic bug by moving code block lower in app.py using agent mode
 attempts_banner.info(
     f"Guess a number between {low} and {high}. "
     f"Attempts left: {attempt_limit - st.session_state.attempts}"
 )
 
+#FIX: Fix debug panel bug by moving code block lower in app.py using agent mode
 with debug_panel.container():
     with st.expander("Developer Debug Info"):
         st.write("Secret:", st.session_state.secret)
